@@ -1,0 +1,602 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Lilita One", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 99vh;
+    background: url('background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container-outer{
+    position: absolute;
+    bottom: 1px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: grid;
+    place-items: center;
+    width: 749px;
+    height: 572px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 50px;
+}
+.text{
+    color: #34459e;
+    font-size: 2rem;
+    z-index: 1;
+    position: absolute;
+    top: 230px;
+}
+.button-wrapper{
+    position: relative;
+}
+.button{
+    position: absolute;
+    right: -255px;
+    top: 60px;
+    width: 150px;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: darkgoldenrod;
+    color: white;
+    border-radius: 10px;
+    z-index: 2;
+}
+.button:hover{
+    cursor: pointer;
+}
+input{
+    position: absolute;
+    top: 60px;
+    left: -270px;
+    border: 2px solid darkgoldenrod;
+    border-radius: 10px;
+    font-family: "Lilita One", sans-serif;
+    font-size: 16px;
+    width: 300px;
+    height: 33px;
+}
+.meow{
+    position: absolute;
+    bottom: 100px;
+    left: 180px;
+    transform: rotate(25deg);
+    opacity: 0;
+    color: #34459e;
+}
+.thinking-takeover{
+    width: 100vw;
+    height: 115vh;
+    position: absolute;
+    background: rgb(238,174,202);
+    opacity: 0;
+}
+.cat{
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    bottom: -50px;
+    background-color: burlywood;
+    border-radius: 140px 140px 0 0;
+    z-index: 1;
+}
+.ear{
+    width: 0;
+    height: 0;
+    border-top: 80px solid darkgoldenrod;
+
+    position: absolute;
+    top: 10px;
+}
+.ear.left{
+    border-right: 80px solid transparent;
+    left: 10px;
+}
+.ear.right{
+    border-left: 80px solid transparent;
+    right: 10px;
+}
+.eye{
+    width: 25px;
+    height: 5px;
+    border-radius: 25px;
+    position: absolute;
+    top: 90px;
+    background-color: black;
+}
+.eye.left{
+    left: 100px;
+}
+.eye.right{
+    right: 100px;
+}
+.nose{
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 10px solid darkgoldenrod;
+    border-radius: 5px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 30px;
+    left: 145px;
+}
+.bell{
+    position: absolute;
+    bottom: -25px;
+    right: 170px;
+}
+.base{
+    position: absolute;
+    width: 50px;
+    height: 25px;
+    border-radius: 25px 25px 0px 0px;
+    background-color: #f1c40f;
+}
+.stem{
+    width: 5px;
+    height: 15px;
+    background-color: #f1c40f;
+    position: absolute;
+    top: -10px;
+    left: 22px;
+}
+.top{
+    width: 16px;
+    height: 3px;
+    background-color: #f1c40f;
+    position: absolute;
+    top: -12px;
+    left: 17px;
+}
+.try-again{
+    opacity: 0;
+    position: absolute;
+    top: 225px;
+    left: 210px;
+    width: 100px;
+    padding: 10px 20px;
+    margin: 5px;
+    text-align: center;
+    background-color: darkgoldenrod;
+    color: white;
+    border-radius: 10px;
+    z-index: 1;
+}
+.try-again:hover{
+    cursor: pointer;
+}
+.return{
+    opacity: 0;
+    position: absolute;
+    top: 225px;
+    width: 100px;
+    padding: 10px 20px;
+    margin: 5px;
+    text-align: center;
+    background-color: darkgoldenrod;
+    border-radius: 10px;
+    z-index: 1;
+    right: 210px;
+}
+.return:hover{
+    cursor: pointer;
+}
+.return a{
+    color: white;
+    text-decoration: none;
+}
+.animating{
+    .button{
+        animation-name: turn-into-ball,drop,go-back,expand;
+        animation-duration: .25s , .25s,.25s,.25s;
+        animation-delay: 0s ,1s,18s,19s;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275),ease-in;
+    }
+    .top{
+        animation-name: bell,go;
+        animation-duration: .2s,.2s;
+        animation-delay: 1.1s,1.1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in;
+    }
+    .eye{
+        animation-name: eye-open,eye-close,eye-open;
+        animation-duration: .05s ,.05s,.05s;
+        animation-delay: 1.3s, 3.3s ,10.3s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in;
+    }
+    .thinking-takeover{
+        animation-name: thinking;
+        animation-duration: 7s;
+        animation-delay: 3.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in;
+    }
+    .meow{
+        animation-name: meow;
+        animation-duration: 1s;
+        animation-delay: 14.5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in;
+    }
+    .try-again{
+        animation-name: end;
+        animation-duration: 2s;
+        animation-delay: 17s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in;
+    }
+    .return{
+        animation-name: end;
+        animation-duration: 2s;
+        animation-delay: 17s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in;
+    }
+}
+
+@keyframes turn-into-ball{
+    100%{
+        width: 10px;
+    }
+}
+@keyframes drop{
+    33%{
+        transform: translateY(200px);
+    }
+    66%{
+        transform: translateY(190px);
+    }
+    100%{
+        transform: translateY(200px);
+    }
+}
+@keyframes go-back{
+    0% {
+        transform: translateY(-198px);
+    }
+    33% {
+        transform: translateY(-188px);
+    }
+    66% {
+        transform: translateY(-198px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes expand{
+    100%{
+        width: 150px;
+    }
+}
+@keyframes bell{
+    50%{
+        transform: translateY(1px);
+    }
+    100%{
+        transform: translateY(-1px);
+    }
+}
+@keyframes go{
+    100%{
+        transform: translateY(-2px);
+    }
+}
+@keyframes eye-open{
+    100%{
+        height: 25px;
+        top: 85px;
+    }
+}
+@keyframes eye-close{
+    100%{
+        height: 5px;
+        top: 90px;
+    }
+}
+@keyframes thinking{
+    0%{
+        opacity: 0;
+    }
+    33%{
+        opacity: 0.75;
+    }
+    66%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes meow{
+    50%{
+        opacity: 1;
+        transform: rotate(-25deg) scale(1.2);
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(-25deg) scale(1);
+    }
+}
+@keyframes end{
+    100%{
+        opacity: 1;
+    }
+}
+@media (max-width:769px)
+{
+    body{
+        height: 99vh;
+    }
+    .container-outer{
+        bottom: 8px;
+    }
+}
+@media (max-width:426px)
+{
+    body{
+        height: 100vh;
+    }
+    .container-outer{
+        width: 300px;
+    }
+    .container{
+        width: 300px;
+        height: 572px;
+        bottom: 42px;
+    }
+    .text{
+        top: 210px;
+        text-align: center;
+    }
+    .button-wrapper{
+        position: relative;
+    }
+    .button{
+        right: -190px;
+        top: 100px;
+        width: 330px;
+    }
+    .meow{
+        bottom: 110px;
+        left: 240px;
+    }
+    .thinking-takeover{
+        height: 135vh;
+    }
+    input{
+        top: 40px;
+        left: -180px;
+        width: 360px;
+    }
+    .cat{
+        right: 30px;
+    }
+    .bell{
+        right: 10px;
+    }
+    .try-again{
+        left: 0px;
+    }
+    .return{
+        right: 0px;
+    }
+    @keyframes drop{
+    33%{
+        transform: translateY(160px);
+    }
+    66%{
+        transform: translateY(150px);
+    }
+    100%{
+        transform: translateY(160px);
+    }
+}
+@keyframes go-back{
+    0% {
+        transform: translateY(-178px);
+    }
+    33% {
+        transform: translateY(-168px);
+    }
+    66% {
+        transform: translateY(-178px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes expand{
+    100%{
+        width: 330px;
+    }
+}
+@keyframes meow{
+    50%{
+        opacity: 1;
+        transform: rotate(25deg) scale(1.2);
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(25deg) scale(1);
+    }
+}
+}
+@media (max-width:376px)
+{
+    .button{
+        right: -180px;
+        top: 100px;
+        width: 320px;
+    }
+    input{
+        top: 40px;
+        left: -180px;
+        width: 350px;
+    }
+    .cat{
+        width: 250px;
+        height: 125px;
+        bottom: -50px;
+        right: 50px;
+    }
+    .ear{
+        border-top: 65px solid darkgoldenrod;
+    }
+    .ear.left{
+        border-right: 65px solid transparent;
+    }
+    .ear.right{
+        border-left: 65px solid transparent;
+    }
+    .eye{
+        width: 25px;
+        top: 65px;
+    }
+    .eye.left{
+        left: 70px;
+    }
+    .eye.right{
+        right: 70px;
+    }
+    .nose{
+        bottom: 30px;
+        left: 120px;
+    }
+    .bell{
+        right: 20px;
+    }
+@keyframes expand{
+    100%{
+        width: 320px;
+    }
+}
+@keyframes eye-open{
+    100%{
+        height: 25px;
+        top: 60px;
+    }
+}
+@keyframes eye-close{
+    100%{
+        height: 5px;
+        top: 65px;
+    }
+}
+}
+@media (max-width:321px)
+{
+    .text{
+        font-size: 1.5rem;
+        /* top: 220px; */
+    }
+    .button{
+        right: -140px;
+        width: 240px;
+    }
+    input{
+        top: 40px;
+        left: -140px;
+        width: 270px;
+    }
+    .cat{
+        width: 200px;
+        height: 100px;
+        bottom: -50px;
+        right: 90px;
+    }
+    .ear{
+        border-top: 48px solid darkgoldenrod;
+    }
+    .ear.left{
+        border-right: 48px solid transparent;
+    }
+    .ear.right{
+        border-left: 48px solid transparent;
+    }
+    .eye{
+        width: 20px;
+        height: 3px;
+        border-radius: 15px;
+        top: 55px;
+    }
+    .eye.left{
+        left: 57px;
+    }
+    .eye.right{
+        right: 57px;
+    }
+    .nose{
+        bottom: 18px;
+        left: 95px;
+    }
+    .bell{
+        position: absolute;
+        bottom: -25px;
+        right: 60px;
+    }
+    
+    @keyframes drop{
+        33%{
+            transform: translateY(165px);
+        }
+        66%{
+            transform: translateY(155px);
+        }
+        100%{
+            transform: translateY(165px);
+        }
+    }
+    @keyframes go-back{
+        0% {
+            transform: translateY(-178px);
+        }
+        33% {
+            transform: translateY(-168px);
+        }
+        66% {
+            transform: translateY(-178px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+    @keyframes expand{
+        100%{
+            width: 240px;
+        }
+    }
+    @keyframes go{
+        100%{
+            transform: translateY(2px);
+        }
+    }
+    @keyframes eye-open{
+        100%{
+            height: 20px;
+            top: 50px;
+        }
+    }
+    @keyframes eye-close{
+        100%{
+            height: 3px;
+            top: 55px;
+        }
+    }
+    
+}

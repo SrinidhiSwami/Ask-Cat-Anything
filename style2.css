@@ -1,0 +1,69 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Lilita One", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container-outer{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.text-container{
+    max-width: 800px;
+    text-align: center;
+}
+h1{
+    color: darkgoldenrod;
+}
+h2{
+    color: #34459e;
+}
+p,li{
+    font-size: 16px;
+    color: #8B5E3C;
+    list-style-type: none;
+}
+.description{
+    text-align: center;
+    color: #6D4C41;
+    font-size: 20px;
+    max-width: 700px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+@media (max-width:426px)
+{
+    .container-outer{
+        width: 320px;
+    }
+    h1{
+        font-size: 24px;
+    }
+    h2{
+        font-size: 20px;
+    }
+    p,li{
+        font-size: 12px;
+    }
+    .description{
+        font-size: 16px;
+    }
+}
+@media (max-width:321px){
+    .container-outer{
+        width: 280px;
+    }
+}
